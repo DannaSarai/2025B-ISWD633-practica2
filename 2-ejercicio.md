@@ -12,9 +12,9 @@ docker run -d --name pgAdmin -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN
 ```
 
 La figura presenta el esquema creado en donde los puertos son:
-- a: (completar con el valor)
-- b: (completar con el valor)
-- c: (completar con el valor)
+- a: 5050
+- b: 5432
+- c: 80
 
 ![Imagen](esquema-2-ejercicio.PNG)
 
@@ -23,13 +23,19 @@ La figura presenta el esquema creado en donde los puertos son:
 # COMPLETAR CON UNA CAPTURA DEL LOGIN
 <img width="1912" height="1039" alt="image" src="https://github.com/user-attachments/assets/11d6130b-6207-4932-814b-359024aec3ad" />
 
+Antes de ingresar al servidor desde localhost de postgres se debe crear una conexión 
+```
+docker network create netPostgres
+docker network connect netPostgres postgresCont
+docker network connect netPostgres pgAdmin
+```
+
+Ingreso al servidor creado
+<img width="1486" height="1241" alt="image" src="https://github.com/user-attachments/assets/8546d701-92f1-4c6a-9ac1-45a07da97ef4" />
+
 ### Crear la base de datos info, y dentro de esa base la tabla personas, con id (serial) y nombre (varchar), agregar un par de registros en la tabla, obligatorio incluir su nombre.
-Se ingresa dentro del contenedor
-```
-docker exec -it postgresCont bash
-psql -U postgres
-```
-Se crea la base de datos, la tabala y se agregan registros
+
+Se crea la base de datos, la tabla y se agregan registros
 ```
 CREATE DATABASE info;
 ```
@@ -44,6 +50,7 @@ Datos insertados (añadiendo mi nombre)
 INSERT INTO personas (nombre) VALUES ('Danna Morales');
 INSERT INTO personas (nombre) VALUES ('Javier Muñoz'); 
 ```
+<img width="1482" height="528" alt="image" src="https://github.com/user-attachments/assets/6c9fd4d6-01c3-4e77-a114-0be560f34b04" />
 
 ## Desde el servidor postgresl
 ### Acceder al servidor
