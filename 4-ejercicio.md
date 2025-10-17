@@ -34,6 +34,10 @@ recordar que a es el puerto que usó para el mapeo con wordpress
 
 ### Eliminar el contenedor wordpress
 # COMPLETAR
+```
+docker rm -f wordpressCont
+```
+<img width="516" height="109" alt="image" src="https://github.com/user-attachments/assets/38fecf94-91fe-497f-b279-acb828397aa0" />
 
 ### Crear nuevamente el contenedor wordpress
 Ingresar a: http://localhost:9300/ 
@@ -41,4 +45,4 @@ recordar que a es el puerto que usó para el mapeo con wordpress
 
 ### ¿Qué ha sucedido, qué puede observar?
 # COMPLETAR
-
+Al ingresar nuevamente, me pide datos y al ingresarlos me manda directo a una pagina con el mismo nombre del sitio que tenia anteriormente pero no existe la publicacion o información alguna.
